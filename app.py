@@ -123,7 +123,13 @@ if escolha == "Adicionar Despesa":
             else:
                 # Se tudo estiver ok, salva
                 adicionar_despesa(str(data), categoria, valor, descricao)
-                st.success("Despesa registrada com sucesso!")
+                import time
+                success_box = st.empty()  
+                success_box.success("Despesa registrada com sucesso!")
+
+                time.sleep(2)  # espera 2 segundos
+                success_box.empty()  # remove a mensagem
+
 
 # ------------------------------------------------
 # RODAPÉ
